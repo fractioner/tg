@@ -8,27 +8,23 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    count = len(os.listdir('databases'))
     menu = types.InlineKeyboardMarkup(row_width=2)
     profile = types.InlineKeyboardButton("👤 Информация", callback_data='info')
     shop = types.InlineKeyboardButton("🛒 Магазин", callback_data='shop')
     menu.add(profile, shop)
-    bot.send_message(message.chat.id, "👋🏾 *Vapestore55 приветствует*", parse_mode="Markdown")
-    bot.send_message(message.chat.id, f'👋🏾 *Vapestore55 приветствует вас!*, это бот от @SimpsonWave666🏴,для поиска данных🏴‍☠️.\nмой тгк с работами и отзывами💻📧\nКоличество баз данных: {count}.\nВведите свой запрос:', parse_mode="Markdown", reply_markup=menu)
+    bot.send_message(message.chat.id, f'👋🏾 *Vapestore55 приветствует вас!*, это бот от @vapestorewisting, для покупки наших принадлежностей\nНажмите на кнопку, для выбора:', parse_mode="Markdown", reply_markup=menu)
 @bot.callback_query_handler(lambda c: c.data and c.data.startswith('info'))
 def info(callback_query: types.CallbackQuery):
     user_id = callback_query.from_user.id
-    count = len(os.listdir('databases'))
     menu = types.InlineKeyboardMarkup(row_width=2)
     profile = types.InlineKeyboardButton("👤 Меню", callback_data='start')
     shop = types.InlineKeyboardButton("🛒 Создатель", callback_data='creator')
     menu.add(profile, shop)
-    bot.send_message(user_id, "👋 *Информация!*", parse_mode="Markdown")
-    bot.send_message(user_id, f'💫Соси хуй!', parse_mode="Markdown", reply_markup=menu)
+    bot.send_message(user_id, "👋 *Наш ассортимент!*", parse_mode="Markdown")
+    bot.send_message(user_id, f'Похуй сам напишешь!', parse_mode="Markdown", reply_markup=menu)
 @bot.callback_query_handler(lambda c: c.data and c.data.startswith('start'))
 def start_config(callback_query: types.CallbackQuery):
     user_id = callback_query.from_user.id
-    count = len(os.listdir('databases'))
     menu = types.InlineKeyboardMarkup(row_width=2)
     profile = types.InlineKeyboardButton("👤 Информация", callback_data='info')
     shop = types.InlineKeyboardButton("🛒 Магазин", callback_data='shop')
