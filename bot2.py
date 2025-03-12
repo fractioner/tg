@@ -13,8 +13,8 @@ def start(message):
     profile = types.InlineKeyboardButton("👤 Информация", callback_data='info')
     shop = types.InlineKeyboardButton("🛒 Магазин", callback_data='shop')
     menu.add(profile, shop)
-    bot.send_message(message.chat.id, "👋 *Привет!*", parse_mode="Markdown")
-    bot.send_message(message.chat.id, f'💫🌟привет💫, это бот от @SimpsonWave666🏴,для поиска данных🏴‍☠️.\nмой тгк с работами и отзывами💻📧\nКоличество баз данных: {count}.\nВведите свой запрос:', parse_mode="Markdown", reply_markup=menu)
+    bot.send_message(message.chat.id, "👋🏾 *Vapestore55 приветствует*", parse_mode="Markdown")
+    bot.send_message(message.chat.id, f'👋🏾 *Vapestore55 приветствует вас!*, это бот от @SimpsonWave666🏴,для поиска данных🏴‍☠️.\nмой тгк с работами и отзывами💻📧\nКоличество баз данных: {count}.\nВведите свой запрос:', parse_mode="Markdown", reply_markup=menu)
 @bot.callback_query_handler(lambda c: c.data and c.data.startswith('info'))
 def info(callback_query: types.CallbackQuery):
     user_id = callback_query.from_user.id
