@@ -3,7 +3,7 @@ import telebot
 from telebot import types
 
 # Замените на свой токен при необходимости.
-TOKEN = 7625299955:AAFnicW1zahHB9cMZ5Te6xKP_bZsEUUaRGY'7603288709:AAFx8u6HzfYucwHvKPESLgKuy9df-8gz3_0'
+TOKEN = '7625299955:AAFnicW1zahHB9cMZ5Te6xKP_bZsEUUaRGY'
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
